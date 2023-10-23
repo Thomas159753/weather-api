@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root{
+    --orange: #eb6f4c;
+    --white: #fff;
+
+}
+
+body {
+    display: grid;
+    grid-template-rows: 0.8fr 10fr 0.4fr;
+    min-height: 100vh;
+}
+
+/* header */
+
+header{
+    display: flex;
+
+}

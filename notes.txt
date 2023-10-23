@@ -1,0 +1,2 @@
+the website main area will be in html exept from the main area
+the main area will be inportet from the java

@@ -1,0 +1,1 @@
+(()=>{const t=document.querySelector("img");fetch("https://api.giphy.com/v1/gifs/translate?api_key=YddtodTY6ee5VGvv3WWX1FyUhfoAr4Mm&s=sunny",{mode:"cors"}).then((function(t){return t.json()})).then((function(e){t.src=e.data.images.original.url})).catch((function(t){console.log(`Couldn't get WeatherAPI ${t}`)}))})();
