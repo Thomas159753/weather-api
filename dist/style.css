@@ -8,18 +8,88 @@
 :root{
     --orange: #eb6f4c;
     --white: #fff;
+    --grey-dark: #212529;
 
 }
 
 body {
     display: grid;
-    grid-template-rows: 0.8fr 10fr 0.4fr;
-    min-height: 100vh;
+    grid-template-rows: 0.9fr 10fr 0.4fr;
+    height: 100vh;
 }
 
-/* header */
 
-header{
+.w100{
+    width: 100%;
+}
+.w20{
+    width: 20%;
+}
+.pc-01 {
+    padding: 0rem 2rem 0rem 2rem;
+}
+.btn-orange{
+    background-color: var(--orange);
+}
+.text-white{
+    color: var(--white);
+}
+.bolder{
+    font-weight: bolder;
+}
+
+form{
     display: flex;
+    justify-content: center;
+}
+header{
+    background-color: var(--grey-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+/* searchbar */
+
+.input-group{
+    display: flex;
+    align-items: center;
+    max-width: 40%;
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    font-size: 1.1rem;
+}
+.search-input{
+    display: flex;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+    padding: 0.5rem;
+    font-size: inherit;
+}
+.input-group-button{
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    height: 100%;
+}
+.btn{
+    height: 100%;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+    padding: 0rem 1rem 0rem 1rem;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+
+/* logo */
+
+.logo{
+    text-align: center;
+    color: var(--white);
+    font-size: 2rem;
 }
