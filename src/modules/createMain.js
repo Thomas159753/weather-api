@@ -3,7 +3,7 @@ const createMain = (() => {
     
     async function fetchData() {
         try {
-            let Wthrdata = await weatherAPI(); // Pass the city name here
+            let Wthrdata = await weatherAPI();
             let data = createDom( await Wthrdata)
             return data
         } catch (error) {
@@ -17,13 +17,19 @@ const createMain = (() => {
         console.log(data)
         let mainDivTop = document.createElement('div');
         let mainDivCrtWthr = document.createElement('div');
-        let mainDivCrtWthrh1 = document.createElement('h1');
+        let mainDivCrtWthrp1 = document.createElement('p1');
         let mainDivCrtWthrh2 = document.createElement('h2');
         let mainDivCrtWthrh3 = document.createElement('h3');
         let mainDivCrtWthrh4 = document.createElement('h4');
-        mainDivCrtWthrh1.textContent = data.current.temp_c
 
-        mainDiv.appendChild(mainDivCrtWthrh1)
+        mainDivCrtWthrp1.textContent = `${data.weather[0].description}`.toLocaleUpperCase();
+        mainDivCrtWthrh2.textContent = `${data.name},` + `${data.sys.country}`;
+        mainDivCrtWthrh3.textContent = `${data.main.temp} °C`;
+
+        mainDiv.appendChild(mainDivTop);
+        mainDivTop.appendChild(mainDivCrtWthrp1);
+        mainDivTop.appendChild(mainDivCrtWthrh2);
+        mainDivTop.appendChild(mainDivCrtWthrh3);
     }
     return fetchData
 })()
