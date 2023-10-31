@@ -1,14 +1,13 @@
-import weatherAPI from './weatherAPI';
 import createMain from './createMain';
+import weatherAPI from './weatherAPI';
 
-// async function fetchData() {
-//     try {
-//         let data = await weatherAPI(); // Pass the city name here
-//         console.log(data);
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
+const form = document.querySelector(".searchbar");
+const input = document.querySelector(".search-input");
 
-// fetchData();
-createMain()
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if(input.value !== ""){
+        let data = await weatherAPI(input.value)
+        createMain(data)
+    }else return
+})

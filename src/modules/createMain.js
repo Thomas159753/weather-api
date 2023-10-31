@@ -1,15 +1,4 @@
-import weatherAPI from './weatherAPI';
 const createMain = (() => {
-    
-    async function fetchData() {
-        try {
-            let Wthrdata = await weatherAPI();
-            let data = createDom( await Wthrdata)
-            return data
-        } catch (error) {
-            console.error(error);
-        }
-    }
 
     let mainDiv = document.getElementById('mainDiv');
 
@@ -22,16 +11,19 @@ const createMain = (() => {
         let mainDivCrtWthrh3 = document.createElement('h3');
         let mainDivCrtWthrh4 = document.createElement('h4');
 
-        mainDivCrtWthrp1.textContent = `${data.weather[0].description}`.toLocaleUpperCase();
-        mainDivCrtWthrh2.textContent = `${data.name},` + `${data.sys.country}`;
-        mainDivCrtWthrh3.textContent = `${data.main.temp} °C`;
+        mainDivCrtWthrp1.textContent = `${data.weather_descr}`;
+        mainDivCrtWthrh2.textContent = `${data.fullCityName}`;
+        mainDivCrtWthrh3.textContent = `${data.temperature} °C`;
+        mainDivCrtWthrh4.textContent = `H:${data.temp_max} °C | L:${data.temp_min}`;
 
         mainDiv.appendChild(mainDivTop);
-        mainDivTop.appendChild(mainDivCrtWthrp1);
-        mainDivTop.appendChild(mainDivCrtWthrh2);
-        mainDivTop.appendChild(mainDivCrtWthrh3);
+        mainDivTop.appendChild(mainDivCrtWthr)
+        mainDivCrtWthr.appendChild(mainDivCrtWthrp1);
+        mainDivCrtWthr.appendChild(mainDivCrtWthrh2);
+        mainDivCrtWthr.appendChild(mainDivCrtWthrh3);
+        mainDivCrtWthr.appendChild(mainDivCrtWthrh4);
     }
-    return fetchData
+    return createDom
 })()
 
 
