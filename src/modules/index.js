@@ -1,8 +1,6 @@
 import createMain from './createMain';
 import weatherAPI from './weatherAPI';
-import getTempUnit from './getScaleTemp'
-
-getTempUnit()
+import getTempUnit from './getScaleTemp';
 
 const startapp = (() =>{
     const form = document.querySelector(".searchbar");
@@ -11,7 +9,8 @@ const startapp = (() =>{
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
         if(input.value !== ""){
-            let data = await weatherAPI(input.value)
+            
+            let data = await weatherAPI(input.value, getTempUnit())
             createMain(data)
         }else return
     })
