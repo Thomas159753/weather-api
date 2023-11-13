@@ -1,23 +1,22 @@
-function getTempUnit () {
-    const bolderSpan = document.querySelector('.bolder');
-    const normalSpan = document.querySelector('.normal');
-    let unit = 'metric'
+function changeUnit () {
+    const metricSpan = document.querySelector('.metric');
+    const imperialSpan = document.querySelector('.imperial');
     
-        if(bolderSpan.classList.contains('bolder')){
-            bolderSpan.classList.remove('bolder');
-            bolderSpan.classList.add('normal');
-            normalSpan.classList.add('bolder')
+        if(metricSpan.classList.contains('normal')){
+            metricSpan.classList.remove('normal');
+            metricSpan.classList.add('bolder');
+            imperialSpan.classList.add('normal')
+            imperialSpan.classList.remove('bolder')
             
-            unit = 'metric'
-        }else if(normalSpan.classList.contains('bolder')){           
-            normalSpan.classList.remove('bolder');
-            normalSpan.classList.add('normal');
-            bolderSpan.classList.add('bolder');
+            return 'metric'
+        }else if(imperialSpan.classList.contains('normal')){           
+            imperialSpan.classList.remove('normal');
+            imperialSpan.classList.add('bolder');
+            metricSpan.classList.add('normal');
+            metricSpan.classList.remove('bolder');
             
-            unit = 'imperial'
+            return 'imperial'
         }
-
-        return unit
 }
 
-export default getTempUnit
+export default changeUnit

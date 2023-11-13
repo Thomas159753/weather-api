@@ -1,5 +1,5 @@
 const weatheAPI = (() => {
-    function convert(data, unit){
+    function convert(data){
         const {
             name: cityname,
             sys: {country},
@@ -10,7 +10,7 @@ const weatheAPI = (() => {
         return {fullCityName, weather_descr, temperature: temp, temp_max, temp_min, humidity, pressure, weather_descr}
     }
 
-    async function getData(city)  {
+    async function getData(city, unit)  {
         try {
             let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=18cc1d73605490f399605d29709af9c8`, {mode: 'cors'})
             if (city === "11.11") throw new Error ("Hey little baby") // easter egg shhhh ;)

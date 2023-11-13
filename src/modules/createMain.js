@@ -3,7 +3,7 @@ const createMain = (() => {
     let mainDiv = document.getElementById('mainDiv');
 
     let createDom = (data) => {
-        console.log(data)
+        console.log(data);
         let mainDivTop = document.createElement('div');
         let mainDivCrtWthr = document.createElement('div');
         let mainDivCrtWthrp1 = document.createElement('p1');
