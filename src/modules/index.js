@@ -13,7 +13,7 @@ const startapp = (() =>{
         if(input.value !== ""){
             unit = changeUnit()
             let data = await weatherAPI(input.value, unit)
-            createMain(data)
+            createMain(data, unit)
         }else return
         
     })
@@ -23,7 +23,7 @@ const startapp = (() =>{
         if(input.value !== ""){
             
             let data = await weatherAPI(input.value, unit)
-            createMain(data)
+            createMain(data, unit)
         }else return
     })
     return
