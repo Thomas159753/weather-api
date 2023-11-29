@@ -9,7 +9,7 @@
     --orange: #eb6f4c;
     --white: #fff;
     --grey-dark: #212529;
-
+    --light-grey: #6c757d;
 }
 
 body {
@@ -18,7 +18,9 @@ body {
     height: 100vh;
 }
 
-
+.bg-dark{
+    background-color: var(--grey-dark);
+}
 .w100{
     width: 100%;
 }
@@ -43,7 +45,6 @@ form{
     justify-content: center;
 }
 header{
-    background-color: var(--grey-dark);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -107,4 +108,55 @@ footer{
     color: var(--white);
     text-decoration: none;
     font-size: 1.2rem;
+}
+
+
+/* main */
+.mainTop{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.todayWeather{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+}
+.todayWeather h3{
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+}
+.todayWeather h2{
+    font-size: 3rem;
+    padding-bottom: 0.8rem;
+}
+.Desc-Cont{
+    padding: 2rem 0 3rem 0;
+    font-size: 1.2rem;
+}
+.mainBottom{
+    display: flex;
+    justify-content: center;
+
+}
+.mainBottomContainer{
+    display:grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 2rem 0 2rem 0;
+}
+.weather-info{
+    text-align: center;
+    padding: 3rem;
+}
+.weather-info p{
+    color: var(--white);
+    font-size: 1.2rem;
+}
+small{
+    color: var(--light-grey);
+    font-size: 1.1rem;
 }
